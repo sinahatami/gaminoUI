@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~ngx-smart-modal/ngx-smart-modal";
+@font-face {
+    font-family: roya;
+    src: url(./assets/fonts/Roya.TTF);
+}
+
+p {
+    font-family: roya;
+    direction: rtl;
+    font-size: 18px;
+}
+
+.direction-ltr {
+    direction: ltr !important;
+}
+
+.direction-rtl {
+    direction: rtl !important;
+}
+
+.container-fluid {
+    direction: rtl !important;
+}
+
+mat-button-wrapper {
+    font-family: roya;
+    direction: rtl;
+    font-size: 18px;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.float-left {
+    float: left !important;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.padding25 {
+    padding: 25px;
+}
+
+.full-width-input {
+    width: 100%;
+}
+
+textarea {
+    height: 75px;
+}
+
+mat-form-field {
+    text-align: right !important;
+}
+
+.nsm-dialog-btn-close {
+    position: absolute !important;
+    top: -47px !important;
+    right: -29px !important;
+    color: #fff !important;
+}
+
+::-webkit-scrollbar {
+    position: absolute;
+    width: 8px !important;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    position: absolute;
+    box-shadow: inset 0 0 5px rgb(22, 124, 241) !important;
+    border-radius: 8px !important;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    position: absolute;
+    background: royalblue !important;
+    border-radius: 5px !important;
+}
+
+mat-label,
+mat-card-title mat-card-content {
+    font-family: roya;
+}
+
+.mat-button-wrapper {
+    margin: 0 auto;
+}
+
+input[type=file] {
+    cursor: pointer !important;
+}
+
+button,
+button:focus {
+    outline: none !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background: #0891d1 !important;
+}

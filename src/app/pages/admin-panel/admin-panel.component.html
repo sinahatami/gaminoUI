@@ -1,0 +1,131 @@
+<mat-card class="shadow-lg mat-bar-top">
+
+  <div class="row direction-rtl">
+
+    <div class="col-sm-6">
+      <div class="mt10">
+        <ng-container *ngFor="let item of dropDownList">
+          <button mat-button class="vawe-effect drop-btn mat-button shadow-sm bg-white mr-2"
+            [matMenuTriggerFor]="menu">{{item.btnLable}}
+            <span class="drop-span-icon">
+              <mat-icon matSuffix class="drop-font-size">arrow_drop_down</mat-icon>
+            </span>
+          </button>
+          <mat-menu #menu="matMenu" class="item-drop-btn">
+            <button class="vawe-effect" mat-menu-item (click)="clickFilter(item.item1, 1)">{{item.item1}}</button>
+            <button class="vawe-effect" mat-menu-item (click)="clickFilter(item.item2, 2)">{{item.item2}}</button>
+            <button class="vawe-effect" mat-menu-item (click)="clickFilter(item.item3, 3)">{{item.item3}}</button>
+          </mat-menu>
+        </ng-container>
+      </div>
+      <label>{{ item1 }}</label>
+      <label>{{ item2 }}</label>
+      <label>{{ item3 }}</label>
+    </div>
+
+    <div class="col-sm-6 align-left direction-ltr search">
+      <mat-form-field appearance="legacy" class="text-align-right">
+        <mat-label>جست و جوی خبر</mat-label>
+        <input matInput placeholder="خبر را جست و جو کنید">
+        <mat-icon id="search-icon" matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+</mat-card>
+
+<div class="container-fluid mt-4">
+  <div class="row padding25">
+    <ng-container *ngFor="let item of cardArray">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <div>
+          <mat-card class="card mt-4 shadow">
+            <img mat-card-image src="{{item.image}}">
+            <form class="example-form">
+            </form>
+            <div class="example-form">
+              <mat-form-field class="full-width-input">
+                <mat-label>Favorite food</mat-label>
+                <input matInput [(ngModel)]="item.title">
+              </mat-form-field>
+            </div>
+            <mat-form-field class="full-width-input">
+              <textarea matInput placeholder="توضیحات را بنویسید" [(ngModel)]="item.desc">
+              </textarea>
+            </mat-form-field>
+            <div class="footer-card">
+              <div class="float-left">
+                <mat-card-actions class="direction-ltr d-flex">
+                  <div>
+                    <mat-icon (click)="openModal(item, 'share')">share</mat-icon>
+                  </div>
+                  <div class="ml-2">
+                    <mat-icon>bookmark_border</mat-icon>
+                  </div>
+                  <div class="ml-2">
+                    <mat-icon (click)="openModal(item)">remove_red_eye</mat-icon>
+                  </div>
+                  <div class="ml-2">
+                    <mat-icon matSuffix (click)="navigate()">create</mat-icon>
+                  </div>
+                </mat-card-actions>
+              </div>
+              <div class="float-right footer-card-right">
+                <p>{{ item.date }}</p>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ngx-smart-modal #newsModal identifier="newsModal" [customClass]="'newsModal'">
+
+  <div *ngIf="showModal" class="row smart-modal-content" style="padding: 0px 20px;overflow-y: inherit;">
+    <div>
+
+      <div class="modal-img">
+        <img src="{{ selectedItem.image }}">
+      </div>
+
+      <div class="text-left mt-2">
+        <div class="mt-4">
+          <mat-card-title>{{ selectedItem.title }}</mat-card-title>
+        </div>
+        <div>
+          <mat-card-content>
+            <p class="mt-4">
+              {{ selectedItem.desc }}
+            </p>
+          </mat-card-content>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="isShare" class="footer">
+    <div class="float-left d-flex">
+      <div class="">
+        <img class="footer-img" src="../../../assets/img/Twitter.png" alt="" (click)="shareMethod('twitter')">
+      </div>
+      <div class="ml-4">
+        <img class="footer-img" src="../../../assets/img/brand.png" alt="" (click)="shareMethod('brand')">
+      </div>
+      <div class="ml-4">
+        <img class="footer-img" src="../../../assets/img/Instagram.png" alt="" (click)="shareMethod('instagram')">
+      </div>
+      <div class="ml-4">
+        <img class="footer-img" src="../../../assets/img/telegram.png" alt="" (click)="shareMethod('telegram')">
+      </div>
+    </div>
+
+    <div class="float-right">
+      <img class="footer-img" src="../../../assets/img/pencil.png" alt="" (click)="navigate()">
+    </div>
+  </div>
+
+</ngx-smart-modal>

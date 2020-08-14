@@ -1,0 +1,94 @@
+.mt10 {
+    margin-top: 10px;
+}
+
+.drop-btn {
+    border: 1px solid #fff;
+    border-radius: 33px;
+    outline: none;
+    color: rgb(8, 145, 209);
+}
+
+.item-drop-btn>button {
+    outline: none !important;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.drop-font-size {
+    font-size: 20px;
+}
+
+.drop-span-icon {
+    margin-top: 1px !important;
+    display: inline-flex;
+}
+
+.mat-bar-top {
+    border-radius: 0px 0px 29px 29px;
+    width: 92%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+mat-card-actions {
+    color: #0891d1;
+}
+
+.padding25 {
+    padding: 0px 51px;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.footer-card {
+    display: flow-root;
+    height: 29px;
+}
+
+.footer-card-right {
+    color: #909090;
+    margin-top: 7px;
+}
+
+::ng-deep .newsModal {
+    min-width: 300px;
+    text-align: center;
+}
+
+.modal-img>img {
+    width: 100%;
+}
+
+.mat-card-content {
+    overflow-y: scroll;
+    direction: ltr;
+    height: 66px;
+}
+
+.footer {}
+
+.footer-img {
+    width: 23px;
+    cursor: pointer;
+}
+
+:host ::ng-deep .nsm-content {
+    top: 90px;
+}
+
+.search {
+    font-family: roya;
+}
+
+#search-icon {
+    color: #0891d1 !important;
+}

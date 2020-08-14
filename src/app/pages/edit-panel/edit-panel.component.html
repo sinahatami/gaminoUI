@@ -1,0 +1,108 @@
+<div class="container-fluid">
+  <div class="div-body">
+
+    <div class="row mt-4">
+
+
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <label class="d-flex text-label">تصویر</label>
+        <img [src]="Model.imageUrl" class="w-100" alt="">
+
+        <div class="upload-btn-wrapper d-block" title="">
+          <button mat-flat-button class="vawe-effect upload-btn w-100">بارگذاری عکس</button>
+          <input type="file" class="vawe-effect cursor-pointer input-file" (change)="changeImg($event)">
+        </div>
+
+        <button class="d-flex w-100 mt-2" mat-flat-button color="primary" (click)="saveMethod()">ذخیره</button>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-8 col-sm-8 col-xs-12">
+        <div class="mt-2">
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="تیتر" [(ngModel)]="Model.title">
+          </mat-form-field>
+        </div>
+        <div class="mt-2">
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="تیتر" [(ngModel)]="Model.title">
+          </mat-form-field>
+        </div>
+        <div class="mt-4">
+          <mat-form-field class="full-width-input">
+            <textarea class="" matInput placeholder="توضیحات" z [(ngModel)]="Model.description"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="mt-2">
+          <mat-form-field class="full-width-input">
+            <textarea class="" matInput placeholder="توضیحات ترجمه شده"
+              [(ngModel)]="Model.descriptionTranslate"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8 col-xs-12">
+
+        <mat-card class="card mt-4 shadow text-left">
+
+          <div>
+            <label class="news-info-title">:news info</label>
+            <p class="float-right">{{ Model.info }}</p>
+          </div><br>
+          <div>
+            <label class="news-info-title">:releaseDate</label>
+            <p class="float-right">{{ Model.releaseDate }}</p>
+          </div><br>
+          <div>
+            <label class="news-info-title">:editable</label>
+            <p class="float-right">{{ Model.editable }}</p>
+          </div><br>
+          <div>
+            <label class="news-info-title">:published</label>
+            <p class="float-right">{{ Model.published }}</p>
+          </div>
+          <div><br>
+            <label class="news-info-title">:websiteName</label>
+            <p class="float-right">{{ Model.websiteName }}</p>
+          </div>
+          <div><br>
+            <label class="news-info-title">:originalUrl</label>
+            <p class="float-right">{{ Model.originalUrl }}</p>
+          </div>
+
+        </mat-card>
+
+        <div class="footer mt-3">
+
+          <div class="d-flex float-left footer-left">
+
+            <div>
+              <img class="footer-img mr-3" src="../../../assets/img/telegram.png" alt="">
+            </div>
+
+            <div>
+              <img class="footer-img mr-3" src="../../../assets/img/Instagram.png" alt="">
+            </div>
+
+            <div>
+              <img class="footer-img mr-3" src="../../../assets/img/brand.png" alt="">
+            </div>
+
+            <div>
+              <img class="footer-img mr-3" src="../../../assets/img/Twitter.png" alt="">
+            </div>
+
+          </div>
+
+          <div class="float-right">
+            <img class="footer-img" src="../../../assets/img/Twitter.png" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
